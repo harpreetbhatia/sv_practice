@@ -13,9 +13,11 @@ Practice exercises for SystemVerilog, UVM
 * www.icverification.com
 * www.doulos.com
 * www.sunburst-design.com
+* www.cluelogic.com
 * Books listed on www.chris.spear.net/verification
+* Resources listed on www.verificationexcellence.in/course-resources/general
 
 ### Useful tools for visual understanding (doodling):
-* www.coggle.it
-* www.wavedrom.com/
+* www.wavedrom.com
 * MS Visio with the [TIMEDIA.VSS](http://www.mvps.org/visio/FTP/TIMEDIA.VSS) stencil
+* www.coggle.it
