@@ -4,6 +4,7 @@ Practice exercises for SystemVerilog, UVM
 ### Material from the following sources:
 * www.github.com/VerificationExcellence/SystemVerilogReference
 * www.verificationacademy.com
+* www.github.com/cluelogic/uvm-tutorial-for-candy-lovers
 
 ### Compiled & checked at the following sites:
 * www.edaplayground.com
