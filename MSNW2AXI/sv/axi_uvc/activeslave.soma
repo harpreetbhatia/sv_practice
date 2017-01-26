@@ -1,0 +1,597 @@
+<!--
+======================================================================
+Copyright 1999-2013 by Denali Software, Inc.  All rights reserved.
+======================================================================
+
+This SOMA file describes a memory model, using Denali Software's
+proprietary SOMA language.  By using this SOMA file, you agree to the
+following terms.  If you do not agree to these terms, you may not use
+this SOMA file.
+
+Subject to the restrictions set forth below, Denali Software grants
+you a non-exclusive, non-transferable license only to use this SOMA
+file to simulate the memory described in it using tools supplied by
+Denali Software.
+
+You may not:
+
+  (1)  Use this SOMA file to create software programs or tools that use
+       SOMA files as either input or output.
+
+  (2)  Modify this SOMA file or the SOMA language in any manner.
+
+  (3)  Use this SOMA file to create other languages for describing
+       memory models.
+
+  (4)  Distribute this SOMA file to others.
+
+This SOMA file is based on information received by Denali Software
+from third parties.  DENALI SOFTWARE PROVIDES THIS SOMA FILE "AS IS"
+AND EXPRESSLY DISCLAIMS ALL REPRESENTATIONS, WARRANTIES AND
+CONDITIONS, INCLUDING BUT NOT LIMITED TO WARRANTIES AND CONDITIONS OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
+NONINFRINGEMENT.  DENALI SOFTWARE'S AGGREGATE LIABILITY ARISING FROM
+YOUR USE OF THIS SOMA FILE IS LIMITED TO ONE U.S. DOLLAR.
+
+If you have any questions or if you would like to inquire about
+obtaining additional or different rights in SOMA files or the SOMA
+language, please contact Denali Software, at www.denali.com or at
+info@denali.com.
+
+Written on 10 Sep 2013
+PureView version: 3.3.024  $DENALI: /tools/denali/vipcat3.3-24.20130812.lnx86
+-->
+<soma>
+  <part>
+    <summary>
+      <class>cdn_axi</class>
+      <tool name="PureView" version="3.3.024" path="/tools/denali/vipcat3.3-24.20130812.lnx86" />
+      <partname>
+        <full>axi_sv</full>
+      </partname>
+      <tool name="PureView" version="3.3.023" path="/tools/denali/vipcat3.3-23.20130629.lnx86_64" />
+    </summary>
+    <functionality>
+      <feature name="DeviceMode" origin="user">
+        <value>1</value>
+      </feature>
+      <feature name="MonitorMode" origin="user">
+        <value>0</value>
+      </feature>
+      <feature name="AcceleratedMode" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="Master" origin="user">
+        <value>0</value>
+      </feature>
+      <feature name="Slave" origin="user">
+        <value>1</value>
+      </feature>
+      <feature name="vr_axi_interface" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="spec_ver" origin="user">
+        <value>1</value>
+      </feature>
+      <feature name="spec_ver_AMBA3" origin="user">
+        <value>1</value>
+      </feature>
+      <feature name="spec_ver_AMBA4" origin="user">
+        <value>0</value>
+      </feature>
+      <feature name="spec_subtype" origin="user">
+        <value>1</value>
+      </feature>
+      <feature name="spec_subtype_BASE" origin="user">
+        <value>1</value>
+      </feature>
+      <feature name="spec_subtype_ACE" origin="user">
+        <value>0</value>
+      </feature>
+      <feature name="spec_interface" origin="user">
+        <value>1</value>
+      </feature>
+      <feature name="spec_interface_FULL" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="spec_interface_LITE" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="bus_endianness" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="bus_endianness_LITTLE" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="bus_endianness_BIG_BYTE_INVARIANT" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="cache_line_size" origin="default">
+        <value>32</value>
+      </feature>
+      <feature name="write_data_interleaving_depth" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="vr_axi_agent_config" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="do_signal_check_only_when_valid" origin="user">
+        <value>1</value>
+      </feature>
+      <feature name="do_basic_deadlock_check" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="no_changes_in_address_channels_limit" origin="default">
+        <value>50</value>
+      </feature>
+      <feature name="random_data_when_not_valid" origin="user">
+        <value>1</value>
+      </feature>
+      <feature name="update_cache_for_error_burst_response" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="using_snoop_filter" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="ace_lite_dvm_support" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="write_evict_supported" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="secure_access_memory" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="vr_axi_master_config" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="max_write_bursts_behavior" origin="user">
+        <value>1</value>
+      </feature>
+      <feature name="max_write_bursts_behavior_CONTINUE_TO_SEND" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="max_write_bursts_behavior_STOP_WRITE" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="max_write_bursts_behavior_STOP_ALL" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="read_issuing_capability" origin="user">
+        <value>32</value>
+      </feature>
+      <feature name="write_issuing_capability" origin="user">
+        <value>32</value>
+      </feature>
+      <feature name="stall_addr_after_max_read_issuing_capability" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="stall_addr_after_max_write_issuing_capability" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="consider_wstrb_in_bad_signal_checks" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="using_speculative_fetch" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="all_legal_states" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="ACTIVEactive_passivevr_axi_master_config" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="master_gen_auto_resp" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="ordering_algorithm" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="ordering_algorithm_NORMAL_ORDER" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="ordering_algorithm_ROUND_ROBIN" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="ordering_algorithm_FULL_RANDOM" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="vr_axi_slave_config" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="use_memory" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="read_data_reordering_depth" origin="default">
+        <value>5</value>
+      </feature>
+      <feature name="read_acceptance_capability" origin="default">
+        <value>5</value>
+      </feature>
+      <feature name="write_acceptance_capability" origin="default">
+        <value>5</value>
+      </feature>
+      <feature name="stall_addr_after_max_write_depth" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="stall_addr_after_max_read_depth" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="stall_addr_after_max_read_acceptance_capability" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="stall_addr_after_max_write_acceptance_capability" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="update_exclusive_state_at_last_tr" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="stop_mon_ex_addr_on_unsuccessful_wr" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="disable_memory_update_on_write_burst" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="snoop_issuing_capability" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="ACTIVEactive_passivevr_axi_slave_config" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="read_ordering_algorithm" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="read_ordering_algorithm_NORMAL_ORDER" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="read_ordering_algorithm_ROUND_ROBIN" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="read_ordering_algorithm_RANDOM_NO_INTERLEAVING" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="read_ordering_algorithm_FULL_RANDOM" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="write_resp_ordering_algorithm" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="write_resp_ordering_algorithm_NORMAL_ORDER" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="write_resp_ordering_algorithm_ROUND_ROBIN" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="write_resp_ordering_algorithm_DATA_PHASES_END_TIMES" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="write_resp_ordering_algorithm_FULL_RANDOM" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="gen_auto_resp" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="LITEspec_interfaceBASEspec_subtypeAMBA4spec_vervr_axi_slave_config" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="write_strobe_usage_FULL_USE" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="TRUEuse_memoryvr_axi_slave_config" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="slverr_write_cause_invalid_value" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="no_consistency_check_if_overlap" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="update_memory_for_error_slave_response" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="update_memory_for_error_snoop_response" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="vr_axi_agent_monitor" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="coverage_performance_level" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="coverage_performance_level_HIGH" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="coverage_performance_level_NORMAL" origin="default">
+        <value>1</value>
+      </feature>
+      <feature name="checks_performance_level" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="checks_performance_level_HIGH" origin="default">
+        <value>0</value>
+      </feature>
+      <feature name="checks_performance_level_NORMAL" origin="default">
+        <value>1</value>
+      </feature>
+      <pin name="aclk" origin="default">
+        <username>aclk</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="aresetn" origin="default">
+        <username>aresetn</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="awvalid" origin="default">
+        <username>awvalid</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="awaddr" origin="user">
+        <username>awaddr</username>
+        <bits>32</bits>
+      </pin>
+      <pin name="awlen" origin="user">
+        <username>awlen</username>
+        <bits>4</bits>
+      </pin>
+      <pin name="awsize" origin="default">
+        <username>awsize</username>
+        <bits>3</bits>
+      </pin>
+      <pin name="awburst" origin="default">
+        <username>awburst</username>
+        <bits>2</bits>
+      </pin>
+      <pin name="awlock" origin="default">
+        <username>awlock</username>
+        <bits>2</bits>
+      </pin>
+      <pin name="awcache" origin="default">
+        <username>awcache</username>
+        <bits>4</bits>
+      </pin>
+      <pin name="awprot" origin="default">
+        <username>awprot</username>
+        <bits>3</bits>
+      </pin>
+      <pin name="awregion" origin="default">
+        <username>awregion</username>
+        <bits>4</bits>
+      </pin>
+      <pin name="awqos" origin="default">
+        <username>awqos</username>
+        <bits>4</bits>
+      </pin>
+      <pin name="awid" origin="user">
+        <username>awid</username>
+        <bits>9</bits>
+      </pin>
+      <pin name="awready" origin="default">
+        <username>awready</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="awuser" origin="user">
+        <username>awuser</username>
+        <bits>32</bits>
+      </pin>
+      <pin name="wvalid" origin="default">
+        <username>wvalid</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="wlast" origin="default">
+        <username>wlast</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="wdata" origin="user">
+        <username>wdata</username>
+        <bits>64</bits>
+      </pin>
+      <pin name="wstrb" origin="default">
+        <username>wstrb</username>
+        <bits>8</bits>
+      </pin>
+      <pin name="wid" origin="user">
+        <username>wid</username>
+        <bits>9</bits>
+      </pin>
+      <pin name="wready" origin="default">
+        <username>wready</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="wuser" origin="user">
+        <username>wuser</username>
+        <bits>32</bits>
+      </pin>
+      <pin name="bvalid" origin="default">
+        <username>bvalid</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="bresp" origin="default">
+        <username>bresp</username>
+        <bits>2</bits>
+      </pin>
+      <pin name="bid" origin="user">
+        <username>bid</username>
+        <bits>9</bits>
+      </pin>
+      <pin name="bready" origin="default">
+        <username>bready</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="buser" origin="user">
+        <username>buser</username>
+        <bits>32</bits>
+      </pin>
+      <pin name="arvalid" origin="default">
+        <username>arvalid</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="araddr" origin="user">
+        <username>araddr</username>
+        <bits>32</bits>
+      </pin>
+      <pin name="arlen" origin="user">
+        <username>arlen</username>
+        <bits>4</bits>
+      </pin>
+      <pin name="arsize" origin="default">
+        <username>arsize</username>
+        <bits>3</bits>
+      </pin>
+      <pin name="arburst" origin="default">
+        <username>arburst</username>
+        <bits>2</bits>
+      </pin>
+      <pin name="arlock" origin="default">
+        <username>arlock</username>
+        <bits>2</bits>
+      </pin>
+      <pin name="arcache" origin="default">
+        <username>arcache</username>
+        <bits>4</bits>
+      </pin>
+      <pin name="arprot" origin="default">
+        <username>arprot</username>
+        <bits>3</bits>
+      </pin>
+      <pin name="arregion" origin="default">
+        <username>arregion</username>
+        <bits>4</bits>
+      </pin>
+      <pin name="arqos" origin="default">
+        <username>arqos</username>
+        <bits>4</bits>
+      </pin>
+      <pin name="arid" origin="user">
+        <username>arid</username>
+        <bits>9</bits>
+      </pin>
+      <pin name="arready" origin="default">
+        <username>arready</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="aruser" origin="user">
+        <username>aruser</username>
+        <bits>32</bits>
+      </pin>
+      <pin name="rvalid" origin="default">
+        <username>rvalid</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="rlast" origin="default">
+        <username>rlast</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="rdata" origin="user">
+        <username>rdata</username>
+        <bits>64</bits>
+      </pin>
+      <pin name="rresp" origin="user">
+        <username>rresp</username>
+        <bits>2</bits>
+      </pin>
+      <pin name="rid" origin="user">
+        <username>rid</username>
+        <bits>9</bits>
+      </pin>
+      <pin name="rready" origin="default">
+        <username>rready</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="ruser" origin="user">
+        <username>ruser</username>
+        <bits>32</bits>
+      </pin>
+      <pin name="awdomain" origin="default">
+        <username>awdomain</username>
+        <bits>2</bits>
+      </pin>
+      <pin name="awsnoop" origin="default">
+        <username>awsnoop</username>
+        <bits>3</bits>
+      </pin>
+      <pin name="awbar" origin="default">
+        <username>awbar</username>
+        <bits>2</bits>
+      </pin>
+      <pin name="awunique" origin="default">
+        <username>awunique</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="wack" origin="default">
+        <username>wack</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="ardomain" origin="default">
+        <username>ardomain</username>
+        <bits>2</bits>
+      </pin>
+      <pin name="arsnoop" origin="default">
+        <username>arsnoop</username>
+        <bits>4</bits>
+      </pin>
+      <pin name="arbar" origin="default">
+        <username>arbar</username>
+        <bits>2</bits>
+      </pin>
+      <pin name="rack" origin="default">
+        <username>rack</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="acvalid" origin="default">
+        <username>acvalid</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="acready" origin="default">
+        <username>acready</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="acaddr" origin="default">
+        <username>acaddr</username>
+        <bits>64</bits>
+      </pin>
+      <pin name="acsnoop" origin="default">
+        <username>acsnoop</username>
+        <bits>4</bits>
+      </pin>
+      <pin name="acprot" origin="default">
+        <username>acprot</username>
+        <bits>3</bits>
+      </pin>
+      <pin name="crvalid" origin="default">
+        <username>crvalid</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="crready" origin="default">
+        <username>crready</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="crresp" origin="default">
+        <username>crresp</username>
+        <bits>5</bits>
+      </pin>
+      <pin name="cdvalid" origin="default">
+        <username>cdvalid</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="cdready" origin="default">
+        <username>cdready</username>
+        <bits>1</bits>
+      </pin>
+      <pin name="cddata" origin="default">
+        <username>cddata</username>
+        <bits>256</bits>
+      </pin>
+      <pin name="cdlast" origin="default">
+        <username>cdlast</username>
+        <bits>1</bits>
+      </pin>
+      <feature name="write_strobe_usage" origin="default">
+        <value>0</value>
+      </feature>
+    </functionality>
+    <timing>
+      <timing.set default="yes" name="default" />
+    </timing>
+  </part>
+</soma>
+
