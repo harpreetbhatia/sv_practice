@@ -1,4 +1,4 @@
-## Answers to Exercises 3.9
+## 3.9 Exercises
 
  1. Create the SystemVerilog code with the following requirements:
 a. Create a 512 element integer array
