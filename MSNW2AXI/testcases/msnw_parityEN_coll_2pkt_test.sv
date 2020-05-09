@@ -1,3 +1,4 @@
+//  DESCRIPTION : This file declares the msnw packets with parity en and colle*. 
 class msnw_parityEN_coll_2pkt_test extends base_test;
 
   `uvm_component_utils(msnw_parityEN_coll_2pkt_test)

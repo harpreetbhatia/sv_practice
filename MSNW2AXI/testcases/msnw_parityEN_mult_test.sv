@@ -1,3 +1,4 @@
+//  DESCRIPTION : This file declares the msnw multiple packets with parity en. 
 class msnw_parityEN_mult_test extends base_test;
 
   `uvm_component_utils(msnw_parityEN_mult_test)

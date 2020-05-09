@@ -1,3 +1,4 @@
+//  DESCRIPTION : This file declares the msnw default 1 packet test. 
 class msnw_default_1pkt_test extends base_test;
 
   `uvm_component_utils(msnw_default_1pkt_test)

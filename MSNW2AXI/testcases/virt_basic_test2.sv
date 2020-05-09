@@ -1,34 +1,4 @@
-  ////////////////////////////////////////////////////////////////////////////////
-//                              PMC-Sierra, Inc.                              //
-//                                                                            //
-//                               Copyright 2013                               //
-//                            All Rights Reserved                             //
-//                         CONFIDENTIAL & PROPRIETARY                         //
-////////////////////////////////////////////////////////////////////////////////
-// 
-//  $RCSfile: virt_basic_test2.sv $
-// 
-//  $Date: Wed Oct  13 15:50:04 2013 $
-// 
-//  $Revision: 1.00 $
-// 
-//  $Author: $
-// 
-//      
-//      CAD Log : 
-//  
-//   
-//      
-//      
-//      $KeysEnd$
-// 
 //  DESCRIPTION : This file declares the msnw basic test number 2. 
-//
-//
-//  NOTES : Anyone must be able to load this file without errors
-//
-////////////////////////////////////////////////////////////////////////////////
-
 class virt_basic_test2 extends base_test;
 
   `uvm_component_utils(virt_basic_test2)

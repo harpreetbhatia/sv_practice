@@ -1,3 +1,4 @@
+//  DESCRIPTION : This file declares the msnw error in parity test. 
 class msnw_errParity_1pkt_test extends base_test;
 
   `uvm_component_utils(msnw_errParity_1pkt_test)

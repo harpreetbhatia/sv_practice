@@ -1,34 +1,4 @@
-  ////////////////////////////////////////////////////////////////////////////////
-//                              PMC-Sierra, Inc.                              //
-//                                                                            //
-//                               Copyright 2013                               //
-//                            All Rights Reserved                             //
-//                         CONFIDENTIAL & PROPRIETARY                         //
-////////////////////////////////////////////////////////////////////////////////
-// 
-//  $RCSfile: single_msnw_pkt_test.sv $
-// 
-//  $Date: Wed Oct  13 15:50:04 2013 $
-// 
-//  $Revision: 1.00 $
-// 
-//  $Author: bhatiaha $
-// 
-//      
-//      CAD Log : 
-//  
-//   
-//      
-//      
-//      $KeysEnd$
-// 
-//  DESCRIPTION : This file declares the msnw basic test number 1. 
-//
-//
-//  NOTES : Anyone must be able to load this file without errors
-//
-////////////////////////////////////////////////////////////////////////////////
-
+//  DESCRIPTION : This file declares the msnw basic test with 1 packet. 
 class single_msnw_pkt_test extends base_test;
 
   `uvm_component_utils(single_msnw_pkt_test)

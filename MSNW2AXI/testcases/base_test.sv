@@ -1,3 +1,4 @@
+//  DESCRIPTION : This file declares the base test used by all testcases. 
 class base_test extends uvm_test;
 
   `uvm_component_utils(base_test)
