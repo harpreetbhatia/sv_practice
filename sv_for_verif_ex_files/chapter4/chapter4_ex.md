@@ -19,7 +19,7 @@ that are synchronous to the clock.
 slave
 * Use the clocking block in the I/O list for the master modport.
 
-3. For the clocking block in Exercise 2, fi ll in the `data_in` and `data_out` signals
+3. For the clocking block in Exercise 2, fill in the `data_in` and `data_out` signals
 in the following timing diagram.
 
 
@@ -28,4 +28,7 @@ in the following timing diagram.
 * input skew of 15ns
 * restrict `data_in` to only change on the positive edge of the clock
 
-5. For the clocking block in Exercise 4, fi ll in the following timing diagram, assuming a clock period of 100ns.
+5. For the clocking block in Exercise 4, fill in the following timing diagram, assuming a clock period of 100ns.
+
+> SystemVerilog for Verification,  Ed. 3, C. Spear, G. Tumbush 
+> (c) Springer Science+Business Media, LLC 2012
